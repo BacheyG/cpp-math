@@ -1,2 +1,2 @@
 # cpp-vector
-Vector classes for generic use
+Vector classes for generic usage

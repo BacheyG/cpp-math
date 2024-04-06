@@ -7,6 +7,17 @@ template <typename T>
 struct Vector2D {
 	Vector2D() : X(0), Y(0) {}
 	Vector2D(T x, T y) : X(x), Y(y) {} 
+
+	Vector2D& operator+=(const Vector2D& rhs) {
+		this->X += rhs.X;
+		this->Y += rhs.Y;
+		return *this;
+	}
+
+	friend Vector2D operator*(const Vector2D& lhs, const T& rhs) {
+		return Vector2D(lhs.X * rhs, lhs.Y * rhs);
+	}
+
 public:
 	T X;
 	T Y;

@@ -18,6 +18,10 @@ struct Vector2D {
 		return Vector2D(lhs.X * rhs, lhs.Y * rhs);
 	}
 
+	static float squareDistance(const Vector2D& p1, const Vector2D& p2) {
+		return (p1.X - p2.X) * (p1.X - p2.X) + (p1.Y - p2.Y) * (p1.Y - p2.Y);
+	}
+
 public:
 	T X;
 	T Y;

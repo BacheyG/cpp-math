@@ -14,6 +14,14 @@ struct Vector2D {
 		return *this;
 	}
 
+	friend Vector2D operator+(const Vector2D& lhs, const Vector2D& rhs) {
+		return Vector2D(lhs.X + rhs.X, lhs.Y + rhs.Y);
+	}
+
+	friend Vector2D operator+(const Vector2D& lhs, const T& rhs) {
+		return Vector2D(lhs.X + rhs, lhs.Y + rhs);
+	}
+
 	friend Vector2D operator*(const Vector2D& lhs, const T& rhs) {
 		return Vector2D(lhs.X * rhs, lhs.Y * rhs);
 	}

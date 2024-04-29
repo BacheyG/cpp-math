@@ -1,2 +1,2 @@
-# cpp-vector
-Vector classes for generic usage
+# cpp-math
+Generic Math classes, used for other sample projects of mine

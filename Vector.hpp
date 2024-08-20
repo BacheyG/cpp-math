@@ -35,7 +35,9 @@ struct Vector2D {
 	}
 
 	static float squareDistance(const Vector2D& p1, const Vector2D& p2) {
-		return (p1.X - p2.X) * (p1.X - p2.X) + (p1.Y - p2.Y) * (p1.Y - p2.Y);
+		float xDifference = (p1.X - p2.X);
+		float yDifference = (p1.Y - p2.Y) 
+		return xDifference * xDifference + yDifference * yDifference;
 	}
 
 public:

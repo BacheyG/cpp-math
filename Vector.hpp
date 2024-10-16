@@ -18,6 +18,10 @@ struct Vector2D {
 		return std::sqrt(SquaredLength());
 	}
 
+	T Dot(const Vector2D& other) const {
+		return (this->X * other.X) + (this->Y * other.Y);
+	}
+
 	Vector2D Normalized() const {
 		T length = Length();
 		if (length == 0) {
@@ -52,9 +56,9 @@ struct Vector2D {
 		return Vector2D(lhs.X * rhs, lhs.Y * rhs);
 	}
 
-	static float SquareDistance(const Vector2D& p1, const Vector2D& p2) {
-		float xDifference = (p1.X - p2.X);
-		float yDifference = (p1.Y - p2.Y) 
+	static T SquareDistance(const Vector2D& p1, const Vector2D& p2) {
+		T xDifference = (p1.X - p2.X);
+		T yDifference = (p1.Y - p2.Y);
 		return xDifference * xDifference + yDifference * yDifference;
 	}
 

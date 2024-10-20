@@ -36,6 +36,16 @@ struct Vector2D {
 		return *this;
 	}
 
+	Vector2D& operator*=(T value) {
+		this->X *= value;
+		this->Y *= value;
+		return *this;
+	}
+
+	Vector2D operator-() {
+		return Vector2D(-this->X, -this->Y);
+	}
+
 	friend Vector2D operator+(const Vector2D& lhs, const Vector2D& rhs) {
 		return Vector2D(lhs.X + rhs.X, lhs.Y + rhs.Y);
 	}

@@ -72,6 +72,10 @@ struct Vector2D {
 		return xDifference * xDifference + yDifference * yDifference;
 	}
 
+	static T Distance(const Vector2D& p1, const Vector2D& p2) {
+		return std::sqrt(SquareDistance(p1, p2));
+	}
+
 public:
 	T X;
 	T Y;

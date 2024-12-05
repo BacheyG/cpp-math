@@ -23,7 +23,7 @@ struct Vector2D {
 	}
 
 	T Cross(const Vector2D& other) const {
-		return x * other.y - y * other.x;
+		return X * other.Y - Y * other.X;
 	}
 
 	Vector2D Normalized() const {
@@ -43,6 +43,12 @@ struct Vector2D {
 	Vector2D& operator*=(T value) {
 		this->X *= value;
 		this->Y *= value;
+		return *this;
+	}
+
+	Vector2D& operator/=(T value) {
+		this->X /= value;
+		this->Y /= value;
 		return *this;
 	}
 
@@ -68,6 +74,10 @@ struct Vector2D {
 
 	friend Vector2D operator*(const Vector2D& lhs, const T& rhs) {
 		return Vector2D(lhs.X * rhs, lhs.Y * rhs);
+	}
+
+	friend bool operator==(const Vector2D& lhs, const Vector2D& rhs) {
+		return lhs.X == rhs.X && lhs.Y == rhs.Y;
 	}
 
 	static T SquareDistance(const Vector2D& p1, const Vector2D& p2) {
@@ -121,6 +131,13 @@ struct Vector3D {
 		this->X *= value;
 		this->Y *= value;
 		this->Z *= value;
+		return *this;
+	}
+
+	Vector3D& operator/=(T value) {
+		this->X /= value;
+		this->Y /= value;
+		this->Z /= value;
 		return *this;
 	}
 
